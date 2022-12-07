@@ -1,0 +1,70 @@
+//Font url
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+//Font family
+$primary-font: 'Raleway', Arial, sans-serif;
+$secondary-font: 'Roboto', 'Arial Black', sans-serif;
+
+//Base settings
+$base-size: 1rem;
+$base-ratio: 1.125;
+$body-font-size: $base-size;
+$body-line-height: 1.5; //24px
+$heading-line-height: 1; //16px
+
+//Type Scale
+$text-1: calc($base-size / $base-ratio);
+$text-2: calc($base-size);
+$text-3: calc($text-2 * $base-ratio);
+$text-4: calc($text-3 * $base-ratio);
+$text-5: calc($text-4 * $base-ratio);
+$text-6: calc($text-5 * $base-ratio);
+
+body {
+  font: {
+    family: $primary-font;
+    size: $body-font-size;
+  }
+  line-height: $body-line-height;
+}
+
+h1,
+h2 {
+  font-family: $secondary-font;
+  line-height: $heading-line-height;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: $text-6;
+}
+
+h2 {
+  font-size: $text-3;
+}
+
+textarea {
+  font-family: $primary-font;
+  font-size: $text-3;
+
+  &::placeholder {
+    font-style: italic;
+  }
+}
+
+input {
+  font-size: $text-3;
+
+  & [placeholder='Title'] {
+    font-weight: 600;
+  }
+
+  &::placeholder {
+    font-style: italic;
+  }
+}
+
+span.button {
+  font-size: $text-1;
+}

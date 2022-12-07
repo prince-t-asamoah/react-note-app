@@ -1,0 +1,61 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  
+  .sidebar {
+    width: 25%;
+  }
+
+  .search {
+    input {
+      width: 100%;
+    }
+  }
+
+  .notes {
+    height: 74vh;
+  }
+  
+  .note {
+    .footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  
+  .content {
+    width: 75%;
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+     .body {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .footer {
+        margin: 0 auto;
+        button {
+          display: inline-flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
