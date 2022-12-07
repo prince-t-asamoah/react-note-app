@@ -1,0 +1,9 @@
+[build]
+  base = 'frontend/'
+  publish = 'dist'
+  command = 'npm rund build'
+
+[[redirects]]
+  from = '/*'
+  to = '/'
+  status = 200
