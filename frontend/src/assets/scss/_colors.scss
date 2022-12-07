@@ -1,0 +1,61 @@
+$green-1: #28a745;
+$green-2: #61aa72;
+$blue: #007bff;
+$red: #dc3545;
+
+//Greyscale
+$light-1: #ffffff;
+$light-2: #fafafa;
+$grey-1: #d0d1d2;
+$grey-2: #8c9296;
+$dark-1: #313132;
+$dark-2: #030303;
+
+body {
+  color: $dark-2;
+  background-color: $light-1;
+}
+
+h1 {
+  color: $light-1;
+  background-color: #007bff;
+}
+
+.container {
+  input:focus {
+    background-color: $light-2;
+  }
+
+  .sidebar {
+    .note {
+      .view:hover {
+        color: $blue;
+      }
+      .edit:hover {
+        color: $green-1;
+      }
+      .delete:hover {
+        color: $red;
+      }
+    }
+  }
+
+  .content {
+    .body {
+      textarea:focus {
+        background-color: $light-2;
+      }
+    }
+
+    .footer {
+      button {
+        color: $light-1;
+        background-color: $green-1;
+
+        &:hover {
+          background-color: $green-2;
+        }
+      }
+    }
+  }
+}
