@@ -1,0 +1,30 @@
+
+.container {
+  input[placeholder='Title'] {
+    border-bottom: 1px solid $dark-1 !important;
+  }
+
+    .sidebar {
+      border-right: 1px solid $grey-1;
+      
+      .note {
+        border-bottom: 1px solid $grey-1;
+  
+        .button {
+          text-decoration: underline;
+  
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  
+    .content {
+      .footer {
+        button:hover {
+          cursor: pointer;
+        }
+      }
+    }
+}
