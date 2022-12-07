@@ -1,10 +1,13 @@
 import './App.scss';
+import SideBar from '../components/SideBar';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>React Note App</h1>
-      <p>A note application to create, view, edit and delete notes.</p>
+      <div className='container'>
+        <SideBar/>
+      </div>
     </div>
   )
 }
