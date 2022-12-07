@@ -1,0 +1,72 @@
+$base-space-size: 0.5rem;
+
+// 8point Space Scale
+$space-1: $base-space-size; //8px
+$space-2: calc($space-1 + 0.5rem); //16px
+$space-3: calc($space-2 + 0.5rem); //24px
+$space-4: calc($space-3 + 0.5rem); //32px
+$space-5: calc($space-4 + 0.5rem); //40px
+$space-6: calc($space-5 + 0.5rem); //48px
+$space-7: calc($space-6 + 0.5rem); // 56px
+$space-8: calc($space-7 + 0.5rem); // 56px
+
+h1 {
+  padding: $space-3;
+}
+
+.container {
+  padding: $space-1;
+
+  .search {
+    padding: $space-1;
+    padding-top: $space-2;
+    margin-bottom: $space-1;
+
+    input {
+      padding: $space-1;
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  .notes {
+    padding: 0 $space-1;
+  }
+  .note {
+    padding: $space-1;
+    
+    .footer {
+      gap: $space-1;
+    }
+  }
+
+  .content {
+    padding: $space-2;
+
+    h2 {
+      padding-top: $space-1;
+      padding-bottom: $space-4;
+    }
+
+    .body {
+     padding: $space-1;
+
+     input {
+       padding: $space-1;
+       margin-bottom: $space-2;
+     }
+     
+     textarea {
+      padding: $space-1;
+       margin-bottom: $space-2;
+     }
+    }
+
+    .footer {
+      button {
+        padding: $space-1 $space-3;
+      }
+    }
+  }
+}
