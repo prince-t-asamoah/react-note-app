@@ -7,9 +7,9 @@ const SideBar = () => {
         <input type="search" placeholder="Search by Title" />
       </div>
       <div className="notes">
-        <Note/>
-        <Note/>
-        <Note/>
+        <Note title={"Item 1"}/>
+        <Note title={"Item 2"}/>
+        <Note title={"Item 3"}/>
       </div>
     </div>
   );
