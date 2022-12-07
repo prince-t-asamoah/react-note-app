@@ -1,7 +1,9 @@
 const SideBar = () => {
   return (
     <div className="sidebar">
-        SideBar
+       <div className="search">
+        <input type="search" placeholder="Search by Title" />
+      </div>
     </div>
   );
 }
