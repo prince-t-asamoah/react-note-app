@@ -1,4 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { getAllNotes } from "./actions";
+
+export const fetchAllNoteAPI = createAsyncThunk(
+  'note/fetchAllNote',
+  async(_ThunkAPI) => {
+    const response = await getAllNotes();
+    return response;
+  }
+)
 
 const initialState = {
   allNotes: []
@@ -7,7 +16,7 @@ const initialState = {
 export const noteSlice = createSlice({
   name: "note",
   initialState,
-  reducers: {}
+  reducers: {},
 });
 
 export default noteSlice.reducer;
