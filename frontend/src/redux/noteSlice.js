@@ -24,4 +24,5 @@ export const noteSlice = createSlice({
   },
 });
 
+export const allNotesState = state => state.note.allNotes;
 export default noteSlice.reducer;
