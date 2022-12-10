@@ -1,3 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const noteSlice = createSlice({});
+const initialState = {};
+
+export const noteSlice = createSlice({
+  name: "note",
+  initialState,
+  reducers: {}
+});
+
+export default noteSlice.reducer;
