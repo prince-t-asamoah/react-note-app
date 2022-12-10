@@ -17,6 +17,11 @@ export const noteSlice = createSlice({
   name: "note",
   initialState,
   reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchAllNoteAPI.fulfilled, (state, action) => {
+      state.allNotes = action.payload;
+    });
+  },
 });
 
 export default noteSlice.reducer;
