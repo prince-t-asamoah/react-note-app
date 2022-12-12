@@ -10,7 +10,11 @@ export const fetchAllNoteAPI = createAsyncThunk(
 )
 
 const initialState = {
-  allNotes: []
+  allNotes: [],
+  status: {
+    hasLoaded: false,
+    message: 'No notes available'
+  }
 };
 
 export const noteSlice = createSlice({
@@ -25,4 +29,5 @@ export const noteSlice = createSlice({
 });
 
 export const allNotesState = state => state.note.allNotes;
+export const noteStatusState = state => state.note.status;
 export default noteSlice.reducer;
