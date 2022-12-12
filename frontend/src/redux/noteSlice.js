@@ -22,7 +22,12 @@ export const noteSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchAllNoteAPI.fulfilled, (state, action) => {
+    builder
+    .addCase(fetchAllNoteAPI.pending, state => {
+      state.status.hasLoaded = false;
+      state.status.message = 'Loading notes...';
+    })
+    .addCase(fetchAllNoteAPI.fulfilled, (state, action) => {
       const notes = action.payload;
       if (notes.length !== 0) {
         state.allNotes = notes;
