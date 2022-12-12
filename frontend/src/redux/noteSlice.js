@@ -23,7 +23,11 @@ export const noteSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchAllNoteAPI.fulfilled, (state, action) => {
-      state.allNotes = action.payload;
+      const notes = action.payload;
+      if (notes.length !== 0) {
+        state.allNotes = notes;
+        state.status.hasLoaded = true;
+      }
     });
   },
 });
