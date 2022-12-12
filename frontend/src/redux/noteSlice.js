@@ -33,7 +33,11 @@ export const noteSlice = createSlice({
         state.allNotes = notes;
         state.status.hasLoaded = true;
       }
-    });
+    })
+    .addCase(fetchAllNoteAPI.rejected, state => {
+      state.status.hasLoaded = false;
+      state.status.message = 'Loading failed!';
+    })
   },
 });
 
