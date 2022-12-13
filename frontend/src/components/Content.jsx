@@ -19,8 +19,8 @@ const Content = () => {
       <h2>New Note</h2>
       <form>
         <div className="body">
-          <input type="text" placeholder="Title" defaultValue={title}/>
-          <textarea rows="15" placeholder="Enter notes..." defaultValue={content}></textarea>
+          <input type="text" placeholder="Title" defaultValue={title} disabled={true}/>
+          <textarea rows="15" placeholder="Enter notes..." defaultValue={content} disabled={true}></textarea>
         </div>
         <div className="footer">
           <button type="submit">Add notes</button>
