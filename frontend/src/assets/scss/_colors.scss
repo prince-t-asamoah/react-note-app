@@ -1,6 +1,7 @@
 $green-1: #28a745;
 $green-2: #61aa72;
 $blue: #007bff;
+$blue-1: #7ab6f5;
 $red: #dc3545;
 
 //Greyscale
@@ -26,21 +27,29 @@ h1 {
     background-color: $light-2;
   }
 
-  .sidebar {
-    .note {
-      .view:hover {
-        color: $blue;
+  .content {
+    .buttons {
+      .primary {
+        color: $light-1;
+        border: 1px solid $blue;
+        background-color: $blue;
+  
+        &:hover {
+          background-color: $blue-1;
+        }
       }
-      .edit:hover {
-        color: $green-1;
-      }
-      .delete:hover {
+    
+      .danger {
         color: $red;
+        border: 1px solid $red;
+  
+        &:hover {
+          color: $light-1;
+          background-color: $red;
+        }
       }
     }
-  }
 
-  .content {
     .body {
       textarea:focus {
         background-color: $light-2;
