@@ -10,9 +10,10 @@ h2 {
 }
 
 .container {
-  // input:focus {
-  //   border: 0;
-  // }
+  button {
+    border: 0;
+    background-color: transparent;
+  }
 
   .content {
     .body {
@@ -24,12 +25,6 @@ h2 {
       }
       textarea:focus {
         outline: 0;
-      }
-    }
-  
-    .footer {
-      button {
-        border: 0;
       }
     }
   }
