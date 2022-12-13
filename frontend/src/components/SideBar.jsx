@@ -1,5 +1,9 @@
 import Note from "./Note";
-import { fetchAllNoteAPI, allNotesState, noteStatusState} from "../redux/noteSlice";
+import { 
+  fetchAllNoteAPI,
+  allNotesState,
+  noteStatusState 
+} from "../redux/noteSlice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -10,9 +14,10 @@ const SideBar = () => {
   const [showMessage, setShowMessage] = useState(true);
 
   useEffect(() => {
-    dispatch(fetchAllNoteAPI());
     if (noteStatus.hasLoaded) {
       setShowMessage(false);
+    } else {
+      dispatch(fetchAllNoteAPI());
     }
   });
 
@@ -25,7 +30,7 @@ const SideBar = () => {
        {
           showMessage ?
           <p>{noteStatus.message}</p> : 
-          allNotes.map(note => <Note key={note.id} title={note.title}/>)
+          allNotes.map(note => <Note key={note.id} title={note.title} id={note.id} />)
         }
       </div>
     </div>
