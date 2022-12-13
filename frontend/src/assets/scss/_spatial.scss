@@ -17,6 +17,10 @@ h1 {
 .container {
   padding: $space-1;
 
+  button {
+    padding: $space-1 $space-3;
+  }
+  
   .search {
     padding: $space-1;
     padding-top: $space-2;
@@ -61,12 +65,6 @@ h1 {
       padding: $space-1;
        margin-bottom: $space-2;
      }
-    }
-
-    .footer {
-      button {
-        padding: $space-1 $space-3;
-      }
     }
   }
 }
