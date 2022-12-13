@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { viewNote } from "../redux/noteSlice";
 
 const Content = () => {
+  const viewNoteState = useSelector(viewNote);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
- 
+
+  useEffect(() => {
+    if (Object.keys(viewNoteState).length !== 0) {
+      setTitle(viewNoteState.title);
+      setContent(viewNoteState.content);
+    }
+  }, [viewNoteState]);
+
   return (
     <div className="content">
       <h2>New Note</h2>
