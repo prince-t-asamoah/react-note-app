@@ -9,7 +9,7 @@ const Note = ({id, title}) => {
   }
 
   return (
-    <div className="note">
+    <div className="note" onClick={handleView}>
      <div className="header">
         <h2>{title}</h2>
       </div>
