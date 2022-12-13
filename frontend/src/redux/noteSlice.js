@@ -11,6 +11,7 @@ export const fetchAllNoteAPI = createAsyncThunk(
 
 const initialState = {
   allNotes: [],
+  viewNote: {},
   status: {
     hasLoaded: false,
     message: 'No notes available'
@@ -20,7 +21,13 @@ const initialState = {
 export const noteSlice = createSlice({
   name: "note",
   initialState,
-  reducers: {},
+  reducers: {
+    view(state, action) {
+      const id = action.payload;
+      const note = state.allNotes.find(note =>note.id === id);
+      note ? state.viewNote = note : state.viewNote = {};
+    }
+  },
   extraReducers: (builder) => {
     builder
     .addCase(fetchAllNoteAPI.pending, state => {
@@ -43,4 +50,6 @@ export const noteSlice = createSlice({
 
 export const allNotesState = state => state.note.allNotes;
 export const noteStatusState = state => state.note.status;
+export const viewNote = state => state.note.viewNote;
+export const { view } = noteSlice.actions;
 export default noteSlice.reducer;
