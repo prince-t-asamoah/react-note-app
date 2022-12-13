@@ -13,13 +13,13 @@ const Note = ({id, title}) => {
      <div className="header">
         <h2>{title}</h2>
       </div>
-      <div className="footer">
+      {/* <div className="footer">
         <span className="view button" onClick={handleView}>
           View
         </span>
         <span className="edit button">Edit</span>
         <span className="delete button">Delete</span>
-      </div>
+      </div> */}
     </div>
   );
 }
