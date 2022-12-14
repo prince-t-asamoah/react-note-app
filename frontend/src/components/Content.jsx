@@ -40,12 +40,27 @@ const Content = () => {
           <button type="button" className="danger">Delete</button>
         </div>
         <div className="body">
-          <input type="text" placeholder="Title" defaultValue={noteTitle} disabled={isDisabled} autoFocus/>
-          <textarea rows="15" placeholder="Enter notes..." defaultValue={noteContent} disabled={isDisabled}>
+          <input 
+            type="text"
+            placeholder="Title"
+            value={noteTitle}
+            disabled={isDisabled}
+            autoFocus
+            onChange={({target}) => setNoteTitle(target.value)}
+            />
+          <textarea
+            rows="15"
+            placeholder="Enter notes..."
+            value={noteContent}
+            disabled={isDisabled}
+            onChange={({target}) => setNoteContent(target.value)}
+          >
           </textarea>
         </div>
         <div className="footer">
-          <button type="submit" className="success" disabled={isDisabled}>Add notes</button>
+          <button type="submit" className="success" disabled={isDisabled}>
+            Add notes
+          </button>
         </div>
       </form>
     </div>
