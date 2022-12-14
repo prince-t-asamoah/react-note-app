@@ -35,10 +35,18 @@ h1 {
         background-color: $blue;
   
         &:hover {
+          color: $dark-2;
           background-color: $blue-1;
         }
       }
     
+      .secondary {
+        border: 1px solid $light-2;
+        &:hover {
+          background-color: $grey-1;
+        }
+      }
+      
       .danger {
         color: $red;
         border: 1px solid $red;
