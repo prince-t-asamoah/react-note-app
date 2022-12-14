@@ -14,6 +14,7 @@ const initialState = {
   viewNote: {},
   status: {
     hasLoaded: false,
+    isView: false,
     message: 'No notes available'
   }
 };
@@ -26,6 +27,7 @@ export const noteSlice = createSlice({
       const id = action.payload;
       const note = state.allNotes.find(note =>note.id === id);
       note ? state.viewNote = note : state.viewNote = {};
+      state.status.isView = true;
     }
   },
   extraReducers: (builder) => {
