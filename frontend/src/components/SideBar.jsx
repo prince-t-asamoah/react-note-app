@@ -2,7 +2,7 @@ import Note from "./Note";
 import { 
   fetchAllNoteAPI,
   allNotesState,
-  noteStatusState 
+  noteStatus
 } from "../redux/noteSlice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,11 +10,11 @@ import { useDispatch, useSelector } from "react-redux";
 const SideBar = () => {
   const dispatch = useDispatch();
   const allNotes = useSelector(allNotesState);
-  const noteStatus = useSelector(noteStatusState);
+  const noteStatusState = useSelector(noteStatus);
   const [showMessage, setShowMessage] = useState(true);
 
   useEffect(() => {
-    if (noteStatus.hasLoaded) {
+    if (noteStatusState.hasLoaded) {
       setShowMessage(false);
     } else {
       dispatch(fetchAllNoteAPI());
@@ -29,7 +29,7 @@ const SideBar = () => {
       <div className="notes">
        {
           showMessage ?
-          <p>{noteStatus.message}</p> : 
+          <p>{noteStatusState.message}</p> : 
           allNotes.map(note => <Note key={note.id} title={note.title} id={note.id} />)
         }
       </div>

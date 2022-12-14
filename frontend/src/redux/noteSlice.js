@@ -49,7 +49,7 @@ export const noteSlice = createSlice({
 });
 
 export const allNotesState = state => state.note.allNotes;
-export const noteStatusState = state => state.note.status;
+export const noteStatus = state => state.note.status;
 export const viewNote = state => state.note.viewNote;
 export const { view } = noteSlice.actions;
 export default noteSlice.reducer;
