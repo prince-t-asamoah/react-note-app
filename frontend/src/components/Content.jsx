@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { viewNote } from "../redux/noteSlice";
+import { viewNote, noteStatus } from "../redux/noteSlice";
 
 const Content = () => {
   const viewNoteState = useSelector(viewNote);
+  const noteStatusState = useSelector(noteStatus);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [pageTitle, setPageTitle] = useState('New Note');
 
   useEffect(() => {
     if (Object.keys(viewNoteState).length !== 0) {
@@ -14,9 +16,20 @@ const Content = () => {
     }
   }, [viewNoteState]);
 
+  useEffect(() => {
+    if (noteStatusState.isView) {
+      setPageTitle('View Note');
+    }
+  }, [noteStatusState]);
+
   return (
     <div className="content">
-      <h2>New Note</h2>
+      <h2>{pageTitle}</h2>
+      <div className="buttons">
+        <button type="button" className="primary">New</button>
+        <button type="button" className="secondary">Edit</button>
+        <button type="button" className="danger">Delete</button>
+      </div>
       <form>
         <div className="body">
           <input type="text" placeholder="Title" defaultValue={title} disabled={true}/>
