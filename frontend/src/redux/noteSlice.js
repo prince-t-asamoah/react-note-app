@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getAllNotes } from "./actions";
+import { getAllNotes } from "./actions/api";
 
 export const fetchAllNoteAPI = createAsyncThunk(
   'note/fetchAllNote',
@@ -12,6 +12,7 @@ export const fetchAllNoteAPI = createAsyncThunk(
 const initialState = {
   allNotes: [],
   viewNote: {},
+  newNote: {},
   status: {
     hasLoaded: false,
     isView: false,
