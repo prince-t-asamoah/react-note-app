@@ -22,15 +22,24 @@ const Content = () => {
     }
   }, [noteStatusState]);
 
+  const resetForm = () => {
+    if (noteTitle === '' && noteContent === '') {
+      return;
+    }
+    setNoteTitle('');
+    setNoteContent('');
+    setPageTitle('New Note');
+  }
+
   return (
     <div className="content">
       <h2>{pageTitle}</h2>
-      <div className="buttons">
-        <button type="button" className="primary">New</button>
-        <button type="button" className="secondary">Edit</button>
-        <button type="button" className="danger">Delete</button>
-      </div>
       <form>
+        <div className="buttons">
+          <button type="button" className="primary" onClick={resetForm}>New</button>
+          <button type="button" className="secondary">Edit</button>
+          <button type="button" className="danger">Delete</button>
+        </div>
         <div className="body">
           <input type="text" placeholder="Title" defaultValue={noteTitle} disabled={true}/>
           <textarea rows="15" placeholder="Enter notes..." defaultValue={noteContent} disabled={true}></textarea>
