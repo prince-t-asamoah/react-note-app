@@ -5,14 +5,14 @@ import { viewNote, noteStatus } from "../redux/noteSlice";
 const Content = () => {
   const viewNoteState = useSelector(viewNote);
   const noteStatusState = useSelector(noteStatus);
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [noteTitle, setNoteTitle] = useState('');
+  const [noteContent, setNoteContent] = useState('');
   const [pageTitle, setPageTitle] = useState('New Note');
 
   useEffect(() => {
     if (Object.keys(viewNoteState).length !== 0) {
-      setTitle(viewNoteState.title);
-      setContent(viewNoteState.content);
+      setNoteTitle(viewNoteState.title);
+      setNoteContent(viewNoteState.content);
     }
   }, [viewNoteState]);
 
@@ -32,8 +32,8 @@ const Content = () => {
       </div>
       <form>
         <div className="body">
-          <input type="text" placeholder="Title" defaultValue={title} disabled={true}/>
-          <textarea rows="15" placeholder="Enter notes..." defaultValue={content} disabled={true}></textarea>
+          <input type="text" placeholder="Title" defaultValue={noteTitle} disabled={true}/>
+          <textarea rows="15" placeholder="Enter notes..." defaultValue={noteContent} disabled={true}></textarea>
         </div>
         <div className="footer">
           <button type="submit">Add notes</button>
