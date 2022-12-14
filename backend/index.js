@@ -1,7 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { getAllNotes } = require('./controllers');
+const { 
+  getAllNotes, createNote 
+} = require('./controllers');
 
 const app = express();
 app.use(bodyParser.json());
@@ -14,6 +16,7 @@ app.get("/", (_req, res) => {
 });
 
 app.get('/note/all', getAllNotes);
+app.post('/note/new', createNote);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
