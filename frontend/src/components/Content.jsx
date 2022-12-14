@@ -8,6 +8,7 @@ const Content = () => {
   const [noteTitle, setNoteTitle] = useState('');
   const [noteContent, setNoteContent] = useState('');
   const [pageTitle, setPageTitle] = useState('New Note');
+  const [isDisabled, setIsDisabled] = useState(true);
 
   useEffect(() => {
     if (Object.keys(viewNoteState).length !== 0) {
@@ -23,12 +24,10 @@ const Content = () => {
   }, [noteStatusState]);
 
   const resetForm = () => {
-    if (noteTitle === '' && noteContent === '') {
-      return;
-    }
     setNoteTitle('');
     setNoteContent('');
     setPageTitle('New Note');
+    setIsDisabled(false);
   }
 
   return (
@@ -41,11 +40,12 @@ const Content = () => {
           <button type="button" className="danger">Delete</button>
         </div>
         <div className="body">
-          <input type="text" placeholder="Title" defaultValue={noteTitle} disabled={true}/>
-          <textarea rows="15" placeholder="Enter notes..." defaultValue={noteContent} disabled={true}></textarea>
+          <input type="text" placeholder="Title" defaultValue={noteTitle} disabled={isDisabled} autoFocus/>
+          <textarea rows="15" placeholder="Enter notes..." defaultValue={noteContent} disabled={isDisabled}>
+          </textarea>
         </div>
         <div className="footer">
-          <button type="submit">Add notes</button>
+          <button type="submit" className="success" disabled={isDisabled}>Add notes</button>
         </div>
       </form>
     </div>
