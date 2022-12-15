@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Note from "./Note";
 import { 
-  fetchAllNoteAPI,
   allNotesState,
   noteStatus
 } from "../redux/noteSlice";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { fetchAllNoteAPI } from "../redux/actions/api-thunks";
 
 const SideBar = () => {
   const dispatch = useDispatch();
