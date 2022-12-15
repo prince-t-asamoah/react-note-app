@@ -18,11 +18,11 @@ const createNote = async (req, res) => {
     title,
     content
   }
-  const { data, error } = await note.insert(newNote).select();
+  const { error } = await note.insert(newNote);
   if (error) {
     res.status(500);
   } else {
-    res.json(data);
+    res.status(201);
   }
 }
 
