@@ -1,5 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createNote } from "./api";
+import { getAllNotes, createNote } from "./api";
+
+export const fetchAllNoteAPI = createAsyncThunk(
+  'note/fetchAllNote',
+  async(_ThunkAPI) => {
+    const response = await getAllNotes();
+    return response;
+  }
+);
 
 export const createNoteAPI = createAsyncThunk(
   "note/createNote",

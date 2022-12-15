@@ -1,13 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getAllNotes } from "./actions/api";
-
-export const fetchAllNoteAPI = createAsyncThunk(
-  'note/fetchAllNote',
-  async(_ThunkAPI) => {
-    const response = await getAllNotes();
-    return response;
-  }
-)
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchAllNoteAPI } from "./actions/api-thunks";
 
 const initialState = {
   allNotes: [],
