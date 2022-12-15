@@ -8,3 +8,16 @@ export const getAllNotes = async () => {
     console.error(error);
   }
 };
+
+export const createNote = async(note) => {
+  try {
+    const response = await fetch(`${baseUrl}/note/new`, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(note)
+    });
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+}
