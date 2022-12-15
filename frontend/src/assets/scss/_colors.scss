@@ -27,6 +27,10 @@ h1 {
     background-color: $light-2;
   }
 
+  textarea:focus {
+    background-color: $light-2;
+  }
+
   .content {
     .buttons {
       .primary {
@@ -47,6 +51,15 @@ h1 {
         }
       }
       
+      // .success {
+      //   color: $light-1 !important;
+      //   background-color: $green-1;
+      
+      //   &:hover {
+      //     background-color: $green-2;
+      //   }
+      // }
+
       .danger {
         color: $red;
         border: 1px solid $red;
@@ -54,23 +67,6 @@ h1 {
         &:hover {
           color: $light-1;
           background-color: $red;
-        }
-      }
-    }
-
-    .body {
-      textarea:focus {
-        background-color: $light-2;
-      }
-    }
-
-    .footer {
-      button {
-        color: $light-1;
-        background-color: $green-1;
-
-        &:hover {
-          background-color: $green-2;
         }
       }
     }
